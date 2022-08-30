@@ -1,1 +1,7 @@
-{{ question_id }} {{ question }} {{ pub_date }}
+<h1>{{ question.question_text }}</h1>
+<ul>
+{% for choice in question.choice_set.all %}
+    <li>Choice: {{ choice.choice_text }}</li>
+    <li>Votes: {{ choice.votes }}</li>
+{% endfor %}
+</ul>
